@@ -1,8 +1,10 @@
+import java.util.ArrayList;
 
 public class Location {
 	
 	private int x;
 	private int y;
+	protected ArrayList <Location> surrounding;
 	
 	public Location(int x, int y) {
 		super();
@@ -26,5 +28,19 @@ public class Location {
 	@Override
 	public String toString() {
 		return "Location [x=" + x + ", y=" + y + "]";
+	}
+	
+	public ArrayList <Location> getSurroundings(){
+		surrounding=new ArrayList<Location>();
+		surrounding.add(new Location(getX(), getY()-1));
+		surrounding.add(new Location(getX()+1, getY()-1));
+		surrounding.add(new Location(getX()+1, getY()));
+		surrounding.add(new Location(getX()+1, getY()+1));
+		surrounding.add(new Location(getX(), getY()+1));
+		surrounding.add(new Location(getX()-1, getY()+1));
+		surrounding.add(new Location(getX()-1, getY()));
+		surrounding.add(new Location(getX()-1, getY()-1));
+		return surrounding;
+		
 	}
 }

@@ -1,4 +1,5 @@
 import java.awt.Color;
+
 import java.util.ArrayList;
 
 public abstract class LifeForm {
@@ -9,6 +10,7 @@ public abstract class LifeForm {
 	protected Color myColor;
 	protected int myAge;
 	protected boolean alive;
+
 	
 	// lifeform constructors
 	public LifeForm(int myLifeSpan, Location myLocation, Color myColor, World myWorld) {
@@ -78,6 +80,12 @@ public abstract class LifeForm {
 	public void setAge(int age) {
 		this.myAge = age;
 	}
+	
+	public ArrayList<Location> getSurroundingArray () {
+		return myLocation.getSurroundings();
+	}
+	
+
 	
 	@Override
 	public String toString() {

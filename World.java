@@ -37,6 +37,7 @@ public class World {
 				creatureList.remove(i);
 			else
 				i++;
+			
 		}	
 	}
 	
